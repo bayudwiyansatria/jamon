@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Common Request
  *
- * @param <T>
+ * @param <T> Request Type
  * @author Bayu Dwiyan Satria
  * @version 1.0.0
  */

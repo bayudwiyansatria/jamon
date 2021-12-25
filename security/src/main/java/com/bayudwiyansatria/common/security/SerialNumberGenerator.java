@@ -21,19 +21,18 @@ public class SerialNumberGenerator {
      * @since 1.0.0
      */
     public SerialNumberGenerator() {
-        this(new SecureRandom(), DEFAULT_SERIAL_LENGTH);
+        this(new SecureRandom());
     }
 
     /**
      * Serial Number Generator Constructor
      *
      * @param random Secure Random
-     * @param length Secure Random Length
      * @since 1.0.0
      */
-    SerialNumberGenerator(final SecureRandom random, final int length) {
+    SerialNumberGenerator(final SecureRandom random) {
         this.random = random;
-        this.length = length;
+        this.length = SerialNumberGenerator.DEFAULT_SERIAL_LENGTH;
     }
 
     /**

@@ -8,7 +8,9 @@ package com.bayudwiyansatria.common.security;
  */
 public enum Digest {
 
-    SHA256("SHA-256");
+    SHA256("SHA-256"),
+
+    SHA512("SHA-512");
 
     private final String digest;
 

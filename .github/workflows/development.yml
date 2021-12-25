@@ -1,0 +1,71 @@
+name: Development
+on:
+  pull_request:
+    branches:
+    - develop
+    types:
+    - closed
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        java-version: [11.0.3]
+        operating-system: [ubuntu-latest]
+    steps:
+    - name: Prepare
+      uses: actions/checkout@v2
+    - name: Set Up Java Development Kit
+      uses: actions/setup-java@v2
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: adopt
+        cache: maven
+        settings-path: ${{ github.workspace }}
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - name: Maven clean test package
+      run: >-
+        mvn
+        clean
+        test
+        package
+        --file pom.xml
+        --no-transfer-progress
+        -s ${GITHUB_WORKSPACE}/settings.xml
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: target
+        path: target
+        retention-days: 1
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        java-version: [11.0.3]
+        operating-system: [ubuntu-latest]
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+    - name: Download artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: target
+        path: target
+    - name: Set Up Java Development Kit
+      uses: actions/setup-java@v2
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: adopt
+        cache: maven
+        settings-path: ${{ github.workspace }}
+    - name: Maven deploy
+      run: mvn --batch-mode deploy --no-transfer-progress -s ${GITHUB_WORKSPACE}/settings.xml

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Common Response
  *
- * @param <T>
+ * @param <T> Response Type
  * @author Bayu Dwiyan Satria
  * @version 1.0.0
  */
