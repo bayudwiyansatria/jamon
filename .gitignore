@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# User-specific directory
+target/
+
 # User-specific files
 *.suo
 *.user
@@ -290,6 +293,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+*.iml
 
 # CodeRush
 .cr/
