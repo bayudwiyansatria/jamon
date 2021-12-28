@@ -6,6 +6,7 @@
 [![Support](https://img.shields.io/badge/Community-Support-red.svg?style=flat-square)](SUPPORT.md)
 [![Contributing](https://img.shields.io/badge/%20Community-Contribution-yellow.svg?style=flat-square)](CONTRIBUTING.md)
 
+[![Main](https://github.com/bayudwiyansatria/jamon/actions/workflows/main.yml/badge.svg)](https://github.com/bayudwiyansatria/jamon/actions/workflows/main.yml)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 Common Java Library
