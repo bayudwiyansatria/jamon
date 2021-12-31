@@ -1,6 +1,7 @@
 # Java Common
 
 ![Platforms](https://img.shields.io/badge/%20Platforms-Windows%20/%20Linux-blue.svg?style=flat-square")
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3506ea26fd61486a8110859b325dbea6)](https://app.codacy.com/gh/bayudwiyansatria/jamon?utm_source=github.com&utm_medium=referral&utm_content=bayudwiyansatria/jamon&utm_campaign=Badge_Grade_Settings)
 [![License](https://img.shields.io/badge/%20Licence-MIT-green.svg?style=flat-square)](LICENSE.md)
 [![Code Of Conduct](https://img.shields.io/badge/Community-Code%20of%20Conduct-orange.svg?style=flat-squre)](CODE_OF_CONDUCT.md)
 [![Support](https://img.shields.io/badge/Community-Support-red.svg?style=flat-square)](SUPPORT.md)
