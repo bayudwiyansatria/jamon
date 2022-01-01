@@ -1,0 +1,42 @@
+name: Coverage
+on: [ "push" ]
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        java-version: [ 11.0.3 ]
+        operating-system: [ ubuntu-latest ]
+    steps:
+    - name: Prepare
+      uses: actions/checkout@v2
+    - name: Set Up Java Development Kit
+      uses: actions/setup-java@v2
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: adopt
+        cache: maven
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - name: Maven clean test package
+      run: >-
+        mvn
+        --no-transfer-progress
+        --settings settings.xml
+        --file pom.xml
+        clean
+        test
+        verify
+      env:
+        MAVEN_USERNAME: ${{ github.event.repository.owner.login }}
+        MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+    - name: Report Coverage
+      uses: codacy/codacy-coverage-reporter-action@v1
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        coverage-reports: reporting/target/site/jacoco-aggregate/jacoco.xml
