@@ -12,10 +12,11 @@
     <module>security</module>
     <module>utility</module>
     <module>api</module>
+    <module>reporting</module>
   </modules>
   <!-- Packages -->
   <artifactId>jamon</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <!-- Artifact -->
   <name>Java Common Libs</name>
@@ -143,8 +144,17 @@
     <assembly.tarLongFileMode>posix</assembly.tarLongFileMode>
     <arguments/>
     <!-- Additional Properties -->
+    <junit.version>4.13.2</junit.version>
   </properties>
-  <dependencyManagement/>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -179,6 +189,10 @@
         <artifactId>maven-gpg-plugin</artifactId>
       </plugin>
       <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
@@ -193,10 +207,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

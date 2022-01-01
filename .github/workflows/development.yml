@@ -68,7 +68,6 @@ jobs:
         java-version: ${{ matrix.java-version }}
         distribution: adopt
         cache: maven
-        settings-path: ${{ github.workspace }}
     - name: Maven deploy
       run: mvn --batch-mode --no-transfer-progress --settings settings.xml --file pom.xml deploy
       env:
