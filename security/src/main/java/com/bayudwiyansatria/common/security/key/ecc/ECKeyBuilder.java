@@ -31,7 +31,7 @@ public class ECKeyBuilder {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator
                 .getInstance(this.encryption);
-            keyPairGenerator.initialize(2048);
+            keyPairGenerator.initialize(512);
             KeyPair keyPair = keyPairGenerator.generateKeyPair();
             return this.build((ECPrivateKey) keyPair.getPrivate());
         } catch (NoSuchAlgorithmException e) {
