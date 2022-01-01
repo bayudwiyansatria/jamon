@@ -9,6 +9,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 [![Main](https://github.com/bayudwiyansatria/jamon/actions/workflows/main.yml/badge.svg)](https://github.com/bayudwiyansatria/jamon/actions/workflows/main.yml)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3506ea26fd61486a8110859b325dbea6)](https://app.codacy.com/gh/bayudwiyansatria/jamon?utm_source=github.com&utm_medium=referral&utm_content=bayudwiyansatria/jamon&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/3b8c8c31a0004cf1afbfdd06b739577c)](https://www.codacy.com/gh/bayudwiyansatria/jamon/dashboard?utm_source=github.com&utm_medium=referral&utm_content=bayudwiyansatria/jamon&utm_campaign=Badge_Coverage)
 
 Common Java Library
 
