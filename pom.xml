@@ -6,12 +6,13 @@
   <parent>
     <groupId>com.bayudwiyansatria</groupId>
     <artifactId>bayudwiyansatria-libs</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
   </parent>
   <modules>
     <module>security</module>
     <module>utility</module>
     <module>api</module>
+    <module>reporting</module>
   </modules>
   <!-- Packages -->
   <artifactId>jamon</artifactId>
@@ -186,6 +187,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
